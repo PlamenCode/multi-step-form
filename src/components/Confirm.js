@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 
-export default function FormUserDetails({ nextStep, handleChange, values }) {
+export default function Confirm({ nextStep, handleChange, values }) {
     const theme = createTheme({
         status: {
           danger: orange[500],
