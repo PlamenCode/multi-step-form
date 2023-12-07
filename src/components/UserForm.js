@@ -1,50 +1,51 @@
-import React, { Component } from 'react'
-import FormUserDetails from './FormPersonalDetails';
+import React, { useState } from 'react'
+import FormUserDetails from './FormUserDetails';
 
-export default class UserForm extends Component {
-    state = {
-        step: 1,
-        firstName: '',
-        lastName: '',
-        email: '',
-        ocupation: '',
-        city: '',
-        bio: ''
-    };
 
-    //Proceed to next step method
-    nextStep = () => {
-        const { step } = this.state;
-        this.setState({
+export default function UserForm() {
+    const [state, setState] = useState(
+        {
+            step: 1,
+            firstName: '',
+            lastName: '',
+            email: '',
+            ocupation: '',
+            city: '',
+            bio: ''
+        }
+    );
+    const { step, firstName, lastName, email, ocupation, city, bio } = state;
+    const values = { step, firstName, lastName, email, ocupation, city, bio };
+
+    function nextStep(){
+        const { step } = state;
+        setState({
+            ...state,
             step: step + 1
         })
     };
 
-    //Go back to previous step mehod
-    prevtStep = () => {
-        const { step } = this.state;
-        this.setState({
+    function prevtStep(){
+        const { step } = state;
+        setState({
+            ...state,
             step: step - 1
         })
     };
 
-    //Handle fields change method
-    handleChange = input => e => {
-        this.setState({
+    function handleChange(input, e){
+        setState({
+            ...state,
             [input]: e.target.value
         });
     };
 
-  render() {
-    const { step, firstName, lastName, email, ocupation, city, bio } = this.state;
-    const values = { step, firstName, lastName, email, ocupation, city, bio };
-    
     switch(step){
         case 1: 
             return (
-                <FormUserDetails 
-                    nextStep={this.nextStep} 
-                    handleChange={this.handleChange} 
+                <FormUserDetails
+                    nextStep={nextStep} 
+                    handleChange={handleChange} 
                     values={values}
             />)
         case 2: 
@@ -64,5 +65,4 @@ export default class UserForm extends Component {
                 <h1>Error</h1>
             )
     }
-  }
 }
