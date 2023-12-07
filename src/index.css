@@ -25,3 +25,9 @@ button{
     left: 600px;
     top: 40px;
 }
+.MuiList-root{
+    left: 80px;
+}
+.MuiTypography-root{
+    left: 80px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
+import Success from './Success';
 
 
 export default function UserForm() {
@@ -61,11 +62,15 @@ export default function UserForm() {
             )
         case 3: 
             return (
-                <Confirm />
+                <Confirm 
+                    nextStep={nextStep} 
+                    values={values}
+                    prevStep={prevStep}
+                />
             )
         case 4: 
             return (
-                <h1>Success</h1>
+                <Success />
             )
         default:
             return(

@@ -30,21 +30,18 @@ export default function FormUserDetails({ nextStep, handleChange, values }) {
                 </Toolbar>
             </AppBar>
             <TextField 
-                hintText='Enter your First Name'
                 label='First Name'
                 onChange={(e) => handleChange('firstName', e )}
                 defaultValue={values.firstName}
             />
             <br />
             <TextField 
-                hintText='Enter your Last Name'
                 label='Last Name'
                 onChange={(e) => handleChange('lastName', e )}
                 defaultValue={values.lastName}
             />
             <br />
             <TextField 
-                hintText='Enter your Email'
                 label='Email'
                 onChange={(e) => handleChange('email', e )}
                 defaultValue={values.email}

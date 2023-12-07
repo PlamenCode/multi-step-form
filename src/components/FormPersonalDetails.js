@@ -35,21 +35,19 @@ export default function FormPersonalDetails({ nextStep, handleChange, prevStep, 
                 </Toolbar>
             </AppBar>
             <TextField 
-                hintText='Enter your ocupation'
+                // hintText='Enter your ocupation'
                 label='Ocupation'
                 onChange={(e) => handleChange('ocupation', e )}
                 defaultValue={values.ocupation}
             />
             <br />
             <TextField 
-                hintText='Enter your City'
                 label='City'
                 onChange={(e) => handleChange('city', e )}
                 defaultValue={values.city}
             />
             <br />
             <TextField 
-                hintText='Enter your Bio'
                 label='Bio'
                 onChange={(e) => handleChange('bio', e )}
                 defaultValue={values.bio}
