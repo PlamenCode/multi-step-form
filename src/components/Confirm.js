@@ -7,6 +7,8 @@ import { createTheme } from '@mui/material';
 import { orange } from '@mui/material/colors';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItemText from '@mui/material/ListItemText';
 
 export default function FormUserDetails({ nextStep, handleChange, values }) {
     const theme = createTheme({
@@ -17,6 +19,7 @@ export default function FormUserDetails({ nextStep, handleChange, values }) {
 
     function continueForward(e){
         e.preventDefault();
+        //process form data
         nextStep();
     };
   return (

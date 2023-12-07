@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormUserDetails from './FormUserDetails';
+import FormPersonalDetails from './FormPersonalDetails';
 
 
 export default function UserForm() {
@@ -25,7 +26,7 @@ export default function UserForm() {
         })
     };
 
-    function prevtStep(){
+    function prevStep(){
         const { step } = state;
         setState({
             ...state,
@@ -50,7 +51,12 @@ export default function UserForm() {
             />)
         case 2: 
             return (
-                <h1>FormPersonalDetails</h1>
+                <FormPersonalDetails 
+                    nextStep={nextStep} 
+                    handleChange={handleChange} 
+                    values={values}
+                    prevStep={prevStep}
+                />
             )
         case 3: 
             return (

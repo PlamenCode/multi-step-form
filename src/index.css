@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button{
+    margin: 10px auto !important;
+    position: absolute;
+    top: 50px;
+    left: 700px;
+}
+.MuiFormControl-root{
+    width: 20%;
+    margin: auto;
+    position: absolute; 
+    left: 600px;
+    top: 40px;
+}
